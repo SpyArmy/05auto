@@ -1,0 +1,249 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/*  Apply a natural box layout model to all elements  */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+} // end all elements
+
+
+/* --------------------------- BODY --------------------------- */
+body {
+
+    font-family: $defaultFont;
+    font-weight: $lightWeight;
+    min-width: 320px;
+}
+
+
+/* --------------------------- HEADER --------------------------- */
+#headerWrapper {border-bottom: 1px solid $greyColor;}
+header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: $gutter;
+    align-items: baseline;
+    padding: .5rem 10px 0;
+    .phone {
+        grid-column: 3/4;
+        text-align: right;
+        text-decoration: none;
+        color: $darckBluColor;
+    }
+}
+
+
+
+
+
+
+/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
+
+
+// humburger
+#theButton::before {
+    content: "\2630";
+}
+
+#theButton {
+    border: none;
+    background: none;
+    color: black;
+    font-size: 2rem;
+    width: 44px;
+    height: 44px;
+    font-weight: $lightWeight;
+    top: 0;
+    right: 0;
+    position: absolute;
+    cursor: pointer;
+}// end humburger btn //
+
+
+// the nav style //
+#theNav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    //display: none;
+    li a {
+        color: $primaryColor;
+        display: block;
+        padding: .75rem $gutter;
+        text-decoration: none;
+        border-bottom: 1px solid $primaryColor;
+    }
+    li.active a {
+        color: $darckBluColor;
+        background-color: $secondaryColor;
+    }
+}// end nav //
+
+
+// css for button open //
+#theButton.open::before {
+    content: "\2715";
+}// end open btn //
+
+
+// nav open //
+#theNav {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease-out;
+    ul {
+        overflow: hidden;
+    }
+}
+
+#theNav.open {
+    grid-template-rows: 1fr;
+}// end open nav //
+
+
+// hero image //
+.hero{
+    position: relative;
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    p {
+        position: absolute;
+        margin: 0;
+        background: linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(121,9,9,1) 49%, rgba(0,212,255,0) 100%);
+        padding: 1rem;
+        top: calc(70% - 75px);
+        width: 100%;
+        left: 0;
+        text-align: center;
+        color: white;
+        font-size: 2rem;
+    }
+
+}// end hero img //
+
+
+// cards //
+.cards {
+
+    section{
+        border: 1px solid $primaryColor;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: $secondaryColor;
+        margin: 1rem;
+
+        h2, p, img {
+            margin: 0;
+            padding: 1rem $gutter;
+        }
+        img {
+            display: block;
+            position: relative;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        h2 {
+            background-color: $secondaryColor;
+            font-size: 1.5rem;
+            text-align: center;
+            color: $primaryColor;
+        }
+        p {
+            font-style: italic;
+            color:$primaryColor; 
+        }
+        a {
+            display: block;
+            text-align: center;
+            padding: .75rem;
+            background-color: $primaryColor;
+            color: $secondaryColor;
+            text-decoration: none;
+            margin: 0 3rem 1rem 3rem ;
+            border-radius: 10px;
+        }
+    }
+} // end of cards //
+
+div.cards {
+    section.boun:hover img {animation: myBoun 1s 1;}
+    section.spin:hover img {animation: mySpin 1s 1;}
+    section.puls:hover img {animation: myPuls 1s 1;}
+    section.side:hover img {animation: mySide 1s 1;}
+
+    @keyframes myBoun {
+        0% {bottom: 0px; animation-timing-function: ease-out;}
+        25% {bottom: 15px; animation-timing-function: ease-in;}
+        50% {bottom: 0px; animation-timing-function: ease-in-out;}
+        75% {bottom: 7px; animation-timing-function: ease-in;}
+        100% {bottom: 0px; animation-timing-function: ease-in-out;}
+    }
+    @keyframes mySpin {
+        from {transform: rotate(0deg);}
+        to {transform: rotate(360deg);}
+    }
+    @keyframes myPuls {
+        0% {transform: scale(1.00);}
+        25% {transform: scale(1.5);}
+        50% {transform: scale(1.75);}
+        75% {transform: scale(1.25);}
+        100% {transform: scale(1.0);}
+    }
+    @keyframes mySide {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(20px); }
+        65% { transform: translateX(-20px);}
+        100% { transform: translateX(0); }
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+/* --------------------------- MAIN --------------------------- */
+main {
+    h1 {
+        padding: 1rem $gutter.5rem $gutter;
+        font-size: 1.5rem;
+        color: $darckBluColor;
+        font-weight: $lightWeight;
+    }
+    p {
+        padding: .5rem $gutter;
+        color: #333;
+        line-height: $leading;
+    }
+}// end main
+
+
+
+/* --------------------------- FOOTER --------------------------- */
+#footerWrapper {
+    background-color: $greyColor
+} // end footer wrapper
+
+footer {
+    font-size: .85rem;
+    padding: 1rem $gutter;
+    color: $secondaryColor;
+    text-align: center;
+    line-height: $leading;
+    a {color: $secondaryColor;}
+}// end footer
