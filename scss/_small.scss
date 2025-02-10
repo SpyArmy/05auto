@@ -210,7 +210,14 @@ div.cards {
 
 }
 
-
+#review {
+    text-align: center;
+    figcaption{
+        margin: 1rem;
+        border: 1px solid $primaryColor;
+        border-radius: 10px;
+    }
+}
 
 
 

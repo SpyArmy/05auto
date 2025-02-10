@@ -1,6 +1,8 @@
 const navElement = document.querySelector('#theNav');
 const btnElement = document.querySelector('#theButton');
-const rightNow = new Date();
+
+console.log('Hello, world!');
+
 
 
 
@@ -16,15 +18,14 @@ console.log(review);
 const myTarget = document.querySelector('#review');
 
 for (let x = 0; x < review.length; x++) {
-let barDiv = document.createElement('div')
-barDiv.innerHTML = `<p>${review[x].name} </p>`;
+let barCap = document.createElement('figcaption')
+barCap.innerHTML = `<h3>${review[x].name}</h3> <br> ${review[x].rate} <br> <p>${review[x].comment}</p> <br> <p>${review[x].date}</p>`
 
 
-myTarget.appendChild(barDiv);
+myTarget.appendChild(barCap);
 }// end of loop
 
-
+const rightNow = new Date();
 document.querySelector('#year').textContent = rightNow.getFullYear();
 
-console.log('Hello, world!');
 

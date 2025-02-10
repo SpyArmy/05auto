@@ -525,6 +525,15 @@ div.cards section.side:hover img {
   }
 }
 
+#review {
+  text-align: center;
+}
+#review figcaption {
+  margin: 1rem;
+  border: 1px solid #02070D;
+  border-radius: 10px;
+}
+
 /* --------------------------- MAIN --------------------------- */
 main h1 {
   padding: 1rem 10px 0.5rem 10px;
