@@ -78,6 +78,10 @@ header {
         text-decoration: none;
         border-bottom: 1px solid $primaryColor;
     }
+    a:hover {
+        color: $secondaryColor;
+        background-color: $darckBluColor;
+    }
     li.active a {
         color: $darckBluColor;
         background-color: $secondaryColor;

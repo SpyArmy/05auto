@@ -370,6 +370,10 @@ header .phone {
   text-decoration: none;
   border-bottom: 1px solid #02070D;
 }
+#theNav ul a:hover {
+  color: #fff;
+  background-color: #034AA6;
+}
 #theNav ul li.active a {
   color: #034AA6;
   background-color: #fff;
