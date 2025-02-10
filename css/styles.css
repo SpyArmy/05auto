@@ -431,7 +431,7 @@ header .phone {
 .cards section img {
   display: block;
   position: relative;
-  width: 50%;
+  width: 150px;
   margin: 0 auto;
 }
 .cards section h2 {
